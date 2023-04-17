@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Test_Dev",
+  "name_for_model": "test_dev",
+  "description_for_human": "Giving consumers access to things",
+  "description_for_model": "Giving consumers access to things",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "http://localhost:3000/openapi.yaml",
+    "is_user_authenticated": false
+  },
+  "logo_url": "https://samepage.network/images/logo.png",
+  "contact_email": "support@samepage.network",
+  "legal_info_url": "https://samepage.network/terms-of-use"
+}

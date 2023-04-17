@@ -1,0 +1,46 @@
+info:
+  title: Things
+  description: A ChatGPT extension giving consumers things.
+  version: v1
+servers:
+  - url: http://localhost:3000
+openapi: 3.0.1
+components:
+  schemas:
+    search/getResponse:
+      type: object
+      properties:
+        things:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: number
+      required:
+        - things
+  parameters: {}
+paths:
+  /search:
+    get:
+      operationId: search
+      summary: Search for things
+      parameters:
+        - in: query
+          name: term
+          schema:
+            anyOf:
+              - type: string
+                enum:
+                  - foo
+              - type: string
+                enum:
+                  - bar
+          required: false
+      responses:
+        "200":
+          description: This endpoint returns up to 1 thing.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/search/getResponse"
